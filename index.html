@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,3 +13,161 @@
             referrerpolicy="no-referrer"
         />
         <title>School dashboard</title>
+    </head>
+    <body onload="changeBackground()">
+        <div class="container">
+            <div class="card overseerr bg noclick">
+                <form method="get" action="https://www.google.com/search" id="search-parent">
+                    <input type="text" name="q" size="31" value="" placeholder='Search...' id="searchbox" autofocus />
+                </form>
+            </div>
+            <div class="card-effect card plex bg" onclick="document.location='https:/\/nmsfta.powerschool.com'"><span class="text">Powerschool</span></div>
+            <div class="card-effect card jackett bg" onclick="document.location='http:/\/nmsa.instructure.com'"><span class="text">Canvas</span></div>
+            <div class="card-effect card radarr bg" onclick="document.location='http:/\/mail.google.com/mail/u/0/#inbox'"><span class="text">Email</span></div>
+            <div class="card-effect card sonarr bg" onclick="document.location='http:/\/vscode.dev'"><span class="text">Vs Code</span></div>
+            <div class="card-effect card server bg" onclick="document.location='https:/\/drive.google.com/drive/u/0'"><span class="text">Drive</span></div>
+            <div class="card-effect card deluge bg" onclick="document.location='http:/\/app.plex.tv'"><span class="text">Plex</span></div>
+        </div>
+    </body>
+</html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Titillium+Web&display=swap');
+    body, html {
+        margin: 0px;
+        padding: 0px;
+        top: 0px;
+        left: 0px;
+        border: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    #search-parent {
+        width: 100%;
+        height: 100%;
+    }
+    #searchbox {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 99.85%;
+        height: 100%;
+        font-size: 100pt;
+        color: white !important;
+        text-align: center;
+        background: transparent;
+        border: none;
+        border-radius: 10px;
+        font-family: 'Bitter', serif;
+    }
+    #searchbox:active {
+        border: transparent;
+    }
+    #search-parent {
+        border: transparent;
+    }
+    #search-parent:active {
+        border: transparent;
+    }
+    :root {
+        --background: "";
+    }
+    body {
+        background-size: cover;
+        background-position: center;
+        background-color: black;
+    }
+    .card {
+        transition: 250ms;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 50pt;
+        font-family: 'Bitter', serif;
+        backdrop-filter: blur(5px) saturate(20%);
+        user-select: none;
+        filter: saturate(25%);
+    }
+    .card:hover {
+        backdrop-filter: blur(10px) saturate(100%);
+        filter: saturate(100%);
+    }
+    .card-effect:active {
+        box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 1) inset;
+        backdrop-filter: blur(5px) saturate(80%);
+    }
+    a {
+        text-decoration: none;
+    }
+    .text {
+        color: #ffffff87;
+    }
+    .card:hover > .text {
+        color: #ffffff;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 0.5em 0.5em;
+        grid-auto-flow: row;
+        height: 98.0vh;
+        width: 99.0vw;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        padding-left: 0.5vw;
+        padding-right: 0.5vw;
+    }
+    .overseerr {
+        grid-area: 1 / 1 / 3 / 7;
+        /* height: 36vh; */
+    }
+    .plex {
+        grid-area: 3 / 1 / 4 / 4;
+    }
+    .jackett {
+        grid-area: 3 / 4 / 4 / 7;
+    }
+    .radarr {
+        grid-area: 4 / 1 / 5 / 4;
+    }
+    .sonarr {
+        grid-area: 4 / 4 / 5 / 7;
+    }
+    .server {
+        grid-area: 5 / 1 / 6 / 4;
+    }
+    .deluge {
+        grid-area: 5 / 4 / 6 / 7;
+    }
+</style>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.min.js"
+    integrity="sha512-h7sEAeLJrgSKuLDecT6NeHSUlbSwpS30IqGu21caM/sa//cWhp5J5D+MOZ0C5QM4GbJlZeEY1ZXXGVtI5m1arg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<script>
+    var backgrounds = [
+        "https://images.unsplash.com/photo-1692026187565-5cd1ac9a4f5a",
+        "https://agentseed.org/119544-anime-anime-girls-city-skyscraper-Girl-With-Weapon-sniper-rifle-dusk.jpg"
+    ];
+    var bg = "";
+    var backgroundLength = backgrounds.length;
+    let root = document.documentElement;
+    function changeBackground() {
+        var num = randomNumber(backgroundLength);
+        bg = "url(" + backgrounds[num] + ")";
+        root.style.setProperty("--background", bg);
+    }
+    function randomNumber(max) {
+        return Math.floor(Math.random() * max);
+    }
+    var multiple = new Multiple({
+        selector: ".bg",
+        background: "var(--background)",
+    });
+</script>
