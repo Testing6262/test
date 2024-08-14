@@ -72,19 +72,6 @@ body {
     display: block;
 }
 
-.cta-button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.cta-button:hover {
-    background-color: #45a049;
-}
-
 .toggle-menu {
     display: none;
 }
