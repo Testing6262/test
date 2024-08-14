@@ -109,4 +109,7 @@ body {
     }
 }
 
-
+.long-box {
+    height: 2000px; /* Adjust height to make sure scrolling is possible */
+    background: linear-gradient(to bottom, #f0f0f0, #cccccc); /* Optional: adds a gradient background for better visibility */
+}
