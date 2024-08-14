@@ -15,7 +15,7 @@ body {
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -24,6 +24,7 @@ body {
     text-decoration: none;
     font-size: 1.5em;
     font-weight: bold;
+    margin-right: 20px;
 }
 
 .nav-links {
@@ -76,6 +77,17 @@ body {
     display: none;
 }
 
+/* Toggle menu button for mobile screens */
+.toggle-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto; /* Align button to the right */
+}
+
 @media (max-width: 768px) {
     .toggle-menu {
         display: block;
@@ -89,10 +101,16 @@ body {
     .nav-links {
         display: none;
         flex-direction: column;
+        width: 100%;
     }
 
     .nav-links.active {
         display: flex;
+    }
+}
+
+    .toggle-menu {
+        display: block; /* Show toggle button on small screens */
     }
 }
 
