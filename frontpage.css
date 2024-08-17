@@ -6,11 +6,16 @@ body {
 .navbar {
     background-color: #333;
     color: #fff;
-    padding: 10px 20px;
-    position: fixed;
+    padding: 6px 1px;
     width: 100%;
-    top: 0;
-    transition: top 0.3s;
+    opacity: 1;
+    box-sizing: border-box;
+}
+
+.navbar.hidden {
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .container {
@@ -22,103 +27,58 @@ body {
 }
 
 .logo {
-    color: #fff;
+    position: absolute;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: bold;
-    margin-right: 20px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
+.toggle-menu {
+    transition: transform 0.3s ease;
     display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: auto;
+    padding: 1px 15px;
 }
 
-.nav-links a:hover {
-    background-color: #555;
+.toggle-menu.active {
+    transform: rotate(90deg);
 }
 
-.dropdown-content {
+.dropdown-menu {
     display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
     background-color: #333;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-menu.active {
+    display: block;
+    margin-left: -1px;
+}
+
+.dropdown-menu a {
     color: #fff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown-menu a:hover {
     background-color: #555;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.toggle-menu {
-    display: none;
-}
-
-/* Toggle menu button for mobile screens */
-.toggle-menu {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    margin-left: auto; /* Align button to the right */
-}
-
-@media (max-width: 768px) {
-    .toggle-menu {
-        display: block;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-}
-
-    .toggle-menu {
-        display: block; /* Show toggle button on small screens */
-    }
-}
-
 .long-box {
-    height: 2000px; /* Adjust height to make sure scrolling is possible */
-    background: linear-gradient(to bottom, #f0f0f0, #cccccc); /* Optional: adds a gradient background for better visibility */
+    height: 2000px;
+    background: linear-gradient(to bottom, #f1f1f1, #000000); /* Optional: adds a gradient background for better visibility */
 }
